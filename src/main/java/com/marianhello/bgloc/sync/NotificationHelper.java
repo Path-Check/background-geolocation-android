@@ -92,12 +92,12 @@ public class NotificationHelper {
             String backgroundServiceChannelName = ResourceResolver.newInstance(context).getString(("background_service_notification_channel_name"));
             android.app.NotificationManager notificationManager = (android.app.NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
             notificationManager.createNotificationChannel(createServiceChannel(backgroundServiceChannelName));
-            // comment out this line as the main app is not using sync service
+            // comment out these lines as the main app is not using sync service and permissions channel
             // TODO: consider dynamically register this notification channel based on config
             // notificationManager.createNotificationChannel(createSyncChannel());
 
-            String permissionChannelName = ResourceResolver.newInstance(context).getString(("android_permission_notification_channel_name"));
-            notificationManager.createNotificationChannel(createAndroidPermissionsChannel(permissionChannelName));
+            // String permissionChannelName = ResourceResolver.newInstance(context).getString(("android_permission_notification_channel_name"));
+            // notificationManager.createNotificationChannel(createAndroidPermissionsChannel(permissionChannelName));
         }
     }
 
